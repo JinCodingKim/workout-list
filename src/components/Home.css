@@ -13,7 +13,8 @@
   flex-direction: column;
   height: 80%;
   width: 100%;
-  margin: 15% auto;
+  margin: 12% auto;
+  min-width: 1060px;
 }
 
 .bodyContainer {
@@ -36,23 +37,39 @@
 .title {
   font-size: 60px;
   text-align: center;
-  margin: 2vh;
+  margin-bottom: 4vh;
   letter-spacing: 5px;
   color: #84caf9;
+  font-weight: bold;
 }
 
 .bodyHeader {
   color: #84caf9;
+  text-transform: uppercase;
 }
 
 #bodyParagraph {
   text-align: center;
   letter-spacing: 1px;
   margin: 20px 50px;
-  text-align: center;
   font-size: 12px;
   line-height: 30px;
+}
+
+ul {
+  margin: 1.5em;
+}
+ul li {
+  border-bottom: 1px solid #ccc;
+
+  padding: 0.2em 0 0.2em 0.5em;
+  font-weight: bold;
   color: #84caf9;
+  list-style-type: none;
+}
+ul li:hover {
+  opacity: 25%;
+  color: #666;
 }
 
 .imageContainer {

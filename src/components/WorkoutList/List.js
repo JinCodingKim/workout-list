@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import UnfilteredList from "./UnfilteredList";
 import axios from "axios";
+import "./WorkoutList.css";
 
 class List extends Component {
   constructor(props) {
@@ -100,25 +101,24 @@ class List extends Component {
         );
       });
     return (
-      <div>
-        <div>{exerciseList}</div>
-        <div>
+      <div className="bigContainer">
+        <div className="listContainer">{exerciseList}</div>
+        <div className="postContainer">
           <input
+            id="postTitle"
             onChange={e => this.nameUpdate(e.target.value)}
             type="text"
             value={this.state.name}
           />
-        </div>
-
-        <div>
           <textarea
+            id="textContainer"
             onChange={e => this.descriptionUpdate(e.target.value)}
             placeholder="Description here"
             value={this.state.description}
           />
-        </div>
-        <div>
-          <button onClick={this.add}>Post</button>
+          <button id="postButton" onClick={this.add}>
+            Post
+          </button>
         </div>
       </div>
     );

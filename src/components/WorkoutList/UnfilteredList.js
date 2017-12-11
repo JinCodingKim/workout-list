@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./WorkoutList.css";
 
 class UnfilteredList extends Component {
   constructor(props) {
@@ -33,11 +34,11 @@ class UnfilteredList extends Component {
   }
   render() {
     return (
-      <div key={this.props.exercise.id}>
-        <h2>{this.props.exercise.name}</h2>
+      <div className="exercise" key={this.props.exercise.id}>
+        <h2 id="exerciseTitle">{this.props.exercise.name}</h2>
 
         {!this.state.edit ? (
-          <p>
+          <p id="descriptionContainer">
             {this.props.exercise.description
               .replace(/(<p[^>]+?>|<p>|<\/p>)/gim, "")
               .replace(/(<li[^>]+?>|<li>|<\/li>)/gim, "")
@@ -49,12 +50,23 @@ class UnfilteredList extends Component {
         ) : (
           <textarea onChange={this.changeDes} value={this.state.description} />
         )}
-        <button onClick={() => this.props.destroy(this.props.index)}>
+        <button
+          id="deleteButton"
+          onClick={() => this.props.destroy(this.props.index)}
+        >
           Delete Exercise
         </button>
 
-        {!this.state.edit && <button onClick={this.toggleEdit}>Edit </button>}
-        {this.state.edit && <button onClick={this.save}>Save </button>}
+        {!this.state.edit && (
+          <button className="editButton" onClick={this.toggleEdit}>
+            Edit{" "}
+          </button>
+        )}
+        {this.state.edit && (
+          <button className="editButton" onClick={this.save}>
+            Save{" "}
+          </button>
+        )}
         <br />
       </div>
     );

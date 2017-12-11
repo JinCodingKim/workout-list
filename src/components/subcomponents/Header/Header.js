@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import logo from "./bodybuilder_logo.png";
+import { NavLink, Link } from "react-router-dom";
+import logo from "./main_image.png";
 import "./Header.css";
 
 class Header extends Component {
@@ -13,11 +13,15 @@ class Header extends Component {
           </Link>
         </div>
         <nav className="navigation">
-          <div>
-            <Link to="/exercises">Workout List</Link>
+          <div className="button">
+            <NavLink to="/exercises" activeClassName="active">
+              Workout List
+            </NavLink>
           </div>
-          <div>
-            <Link to="/create">Create Workout</Link>
+          <div className="button">
+            <NavLink to="/create" activeClassName="active">
+              Create Workout
+            </NavLink>
           </div>
         </nav>
       </header>

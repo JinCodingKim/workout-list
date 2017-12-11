@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import UnfilteredList from "./UnfilteredList";
 import List from "./List";
-// import ChangeExercise from "./ChangeExercise/ChangeExercise";
+import "./WorkoutList.css";
 
 class WorkoutList extends Component {
   constructor(props) {
@@ -24,8 +23,12 @@ class WorkoutList extends Component {
   render() {
     return (
       <div>
-        <div>
-          <select value={this.state.bodyPart} onChange={this.filterByExercise}>
+        <div className="workoutContainer">
+          <select
+            className="filterContainer"
+            value={this.state.bodyPart}
+            onChange={this.filterByExercise}
+          >
             <option value="">Filter By Body Part</option>
             <option value="11">Chest</option>
             <option value="12">Back</option>
