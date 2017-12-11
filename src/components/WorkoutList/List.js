@@ -16,7 +16,7 @@ class List extends Component {
     this.add = this.add.bind(this);
     this.nameUpdate = this.nameUpdate.bind(this);
     this.descriptionUpdate = this.descriptionUpdate.bind(this);
-    // this.update = this.update.bind(this);
+    this.update = this.update.bind(this);
   }
 
   componentDidMount() {
@@ -52,18 +52,21 @@ class List extends Component {
       });
     });
   }
-  // update(id, name, description) {
-  //   let ex = {
-  //     name: this.state.name,
-  //     description: this.state.description,
-  //     license_author: "wger.de"
-  //   };
-  //   axios.put(`/api/exercises/${id}`, ex).then(response => {
-  //     return this.setState({
-  //       exercises: response.data
-  //     });
-  //   });
-  // }
+
+  update(id, description) {
+    this.setState(
+      {
+        isLoading: true
+      },
+      () =>
+        axios.put(`/api/exercises/${id}`, { description }).then(response => {
+          return this.setState({
+            exercises: response.data,
+            isLoading: false
+          });
+        })
+    );
+  }
   nameUpdate(val) {
     this.setState({
       name: val
@@ -91,6 +94,7 @@ class List extends Component {
             destroy={this.destroy}
             key={exercise.id}
             exercise={exercise}
+            update={this.update}
             index={i}
           />
         );

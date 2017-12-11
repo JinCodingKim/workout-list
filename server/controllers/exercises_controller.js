@@ -3,25 +3,7 @@ const { APIKey } = require("./../config.js");
 let exercises = [];
 
 const getExercises = (req, res, next) => {
-  if (req.query.category) {
-    axios
-      .get(
-        `https://wger.de/api/v2/exercise/?language=2&limit=470&status=2&context=edit&category=${
-          req.query.category
-        }`
-      )
-      .then(response => {
-        exercises = response.data.results
-          .filter(
-            e =>
-              e.license_author == "wger.de" &&
-              e.description !== "<p>.</p>" &&
-              e.description !== ""
-          )
-          .map((x, i) => Object.assign(x, { id: i }));
-        res.json(exercises);
-      });
-  } else {
+  if (!exercises.length) {
     axios
       .get(
         "https://wger.de/api/v2/exercise/?language=2&limit=470&status=2&context=edit"
@@ -37,6 +19,8 @@ const getExercises = (req, res, next) => {
           .map((x, i) => Object.assign(x, { id: i }));
         res.json(exercises);
       });
+  } else {
+    res.json(exercises);
   }
 };
 
@@ -51,13 +35,12 @@ const addExercises = (req, res, next) => {
 };
 
 const updateExercises = (req, res, next) => {
+  console.log(req.body);
   const { id } = req.params;
   const index = exercises.findIndex(exercise => exercise.id == id);
 
-  exercises[id] = Object.assign({}, exercises[id], {
-    id: exercises[index].id,
-    name: exercises[index].name || req.body.name,
-    description: exercises[index].description || req.body.description
+  exercises[index] = Object.assign({}, exercises[index], {
+    description: req.body.description
   });
   res.json(exercises);
 };
