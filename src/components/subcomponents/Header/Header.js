@@ -7,23 +7,33 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <div className="headLogo">
-          <Link to="/">
-            <img src={logo} alt="" />
-          </Link>
+        <div className="logoNav">
+          <div className="headLogo">
+            <Link to="/">
+              <img src={logo} alt="" />
+            </Link>
+          </div>
+          <nav className="navigation">
+            <div className="headButton">
+              <NavLink
+                to="/exercises"
+                className="notActive"
+                activeClassName="active"
+              >
+                Workout List
+              </NavLink>
+            </div>
+            <div className="headButton">
+              <NavLink
+                to="/create"
+                className="notActive"
+                activeClassName="active"
+              >
+                Create Workout
+              </NavLink>
+            </div>
+          </nav>
         </div>
-        <nav className="navigation">
-          <div className="button">
-            <NavLink to="/exercises" activeClassName="active">
-              Workout List
-            </NavLink>
-          </div>
-          <div className="button">
-            <NavLink to="/create" activeClassName="active">
-              Create Workout
-            </NavLink>
-          </div>
-        </nav>
       </header>
     );
   }

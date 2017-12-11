@@ -24,7 +24,6 @@ class UnfilteredList extends Component {
     const { exercise: { id }, update } = this.props;
     update(id, this.state.description);
     this.toggleEdit();
-    console.log("hello");
   }
 
   changeDes(e) {
@@ -48,7 +47,11 @@ class UnfilteredList extends Component {
               .replace(/(<strong[^>]+?>|<strong>|<\/strong>)/gim, "")}
           </p>
         ) : (
-          <textarea onChange={this.changeDes} value={this.state.description} />
+          <textarea
+            id="editContainer"
+            onChange={this.changeDes}
+            value={this.state.description}
+          />
         )}
         <button
           id="deleteButton"

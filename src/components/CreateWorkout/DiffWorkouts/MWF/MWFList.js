@@ -5,9 +5,9 @@ const MWFList = props => {
     .filter(exercise => exercise.category == "11")
     .map(exercise => {
       return (
-        <div key={exercise.id}>
-          <h2> {exercise.name}</h2>
-          <div>
+        <div className="ex" key={exercise.id}>
+          <h2 className="exTitle"> {exercise.name}</h2>
+          <div className="exDescription">
             {" "}
             {exercise.description
               .replace(/(<p[^>]+?>|<p>|<\/p>)/gim, "")
@@ -27,9 +27,9 @@ const MWFList = props => {
     .filter(exercise => exercise.category == "12")
     .map(exercise => {
       return (
-        <div key={exercise.id}>
-          <h2> {exercise.name}</h2>
-          <div>
+        <div className="ex" key={exercise.id}>
+          <h2 className="exTitle"> {exercise.name}</h2>
+          <div className="exDescription">
             {" "}
             {exercise.description
               .replace(/(<p[^>]+?>|<p>|<\/p>)/gim, "")
@@ -49,9 +49,9 @@ const MWFList = props => {
     .filter(exercise => exercise.category == "10")
     .map(exercise => {
       return (
-        <div key={exercise.id}>
-          <h2> {exercise.name}</h2>
-          <div>
+        <div className="ex" key={exercise.id}>
+          <h2 className="exTitle"> {exercise.name}</h2>
+          <div className="exDescription">
             {" "}
             {exercise.description
               .replace(/(<p[^>]+?>|<p>|<\/p>)/gim, "")
@@ -71,9 +71,9 @@ const MWFList = props => {
     .filter(exercise => exercise.category == "9")
     .map(exercise => {
       return (
-        <div key={exercise.id}>
-          <h2> {exercise.name}</h2>
-          <div>
+        <div className="ex" key={exercise.id}>
+          <h2 className="exTitle"> {exercise.name}</h2>
+          <div className="exDescription">
             {" "}
             {exercise.description
               .replace(/(<p[^>]+?>|<p>|<\/p>)/gim, "")
@@ -92,21 +92,21 @@ const MWFList = props => {
   return (
     <section>
       <div>
-        <h1>{props.days[0]}</h1>
+        <h1 className="days">{props.days[0]}</h1>
         {randChest}
         {randBack}
         {randLegs}
         {randAbs}
       </div>
       <div>
-        <h1>{props.days[1]}</h1>
+        <h1 className="days">{props.days[1]}</h1>
         {randChest}
         {randBack}
         {randLegs}
         {randAbs}
       </div>
       <div>
-        <h1>{props.days[2]}</h1>
+        <h1 className="days">{props.days[2]}</h1>
         {randChest}
         {randBack}
         {randLegs}

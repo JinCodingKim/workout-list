@@ -108,12 +108,13 @@ class List extends Component {
             id="postTitle"
             onChange={e => this.nameUpdate(e.target.value)}
             type="text"
+            placeholder="Title"
             value={this.state.name}
           />
           <textarea
             id="textContainer"
             onChange={e => this.descriptionUpdate(e.target.value)}
-            placeholder="Description here"
+            placeholder="Description"
             value={this.state.description}
           />
           <button id="postButton" onClick={this.add}>

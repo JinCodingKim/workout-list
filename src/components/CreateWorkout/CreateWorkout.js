@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import MWFList from "./DiffWorkouts/MWF/MWFList";
 import MTTFList from "./DiffWorkouts/MTTF/MTTFList";
+import "./CreateWorkout.css";
 
 class CreateWorkout extends Component {
   constructor(props) {
@@ -15,7 +16,6 @@ class CreateWorkout extends Component {
       workouts2: [],
       numberOfDays: 0
     };
-
     this.threeDays = this.threeDays.bind(this);
     this.fourDays = this.fourDays.bind(this);
   }
@@ -76,26 +76,26 @@ class CreateWorkout extends Component {
 
   render() {
     return (
-      <div>
-        <div>How many days per week would you like to work out?:</div>
-        <button onClick={this.threeDays}>
-          Three Days (Full Body Workouts)
-        </button>
-        <button onClick={this.fourDays}>
-          Four Days (Upper/Lower Split Workouts)
-        </button>
+      <div className="createContainer">
+        <h2 id="createTitle">
+          How many days per week would you like to work out?:
+        </h2>
+        <div className="buttonsContainer">
+          <button className="createButton" onClick={this.threeDays}>
+            Three Days (Full Body Workouts)
+          </button>
+          <button className="createButton" onClick={this.fourDays}>
+            Four Days (Upper/Lower Split Workouts)
+          </button>
+        </div>
 
-        <div>
+        <div className="programContainer">
           {this.state.numberOfDays === 3 ? (
             <MWFList mwf={this.state.workouts1} days={this.state.days1} />
           ) : (
             <MTTFList mttf={this.state.workouts2} days={this.state.days2} />
           )}
         </div>
-
-        {/* <div>
-          <FiveDays exercises={this.state.exercises} />
-        </div> */}
       </div>
     );
   }

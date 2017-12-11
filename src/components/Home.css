@@ -13,8 +13,7 @@
   flex-direction: column;
   height: 80%;
   width: 100%;
-  margin: 12% auto;
-  min-width: 1060px;
+  min-width: 418px;
 }
 
 .bodyContainer {
@@ -59,6 +58,7 @@
 ul {
   margin: 1.5em;
 }
+
 ul li {
   border-bottom: 1px solid #ccc;
 
@@ -66,10 +66,6 @@ ul li {
   font-weight: bold;
   color: #84caf9;
   list-style-type: none;
-}
-ul li:hover {
-  opacity: 25%;
-  color: #666;
 }
 
 .imageContainer {

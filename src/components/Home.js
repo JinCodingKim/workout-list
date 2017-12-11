@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import "./Home.css";
 
-// import CreateWorkout from "./components/CreateWorkout";
-
 class Home extends Component {
   render() {
     return (
