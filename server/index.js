@@ -13,6 +13,6 @@ app.post("/api/exercises", ec.addExercises);
 app.put("/api/exercises/:id", ec.updateExercises);
 app.delete("/api/exercises/:id", ec.removeExercises);
 
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Server is listening on port: ${port}`);
 });
