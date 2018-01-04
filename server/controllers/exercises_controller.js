@@ -1,5 +1,6 @@
 const axios = require("axios");
-const { APIKey } = require("./../config.js");
+// const { APIKey } = require("./../config.js");
+const APIKey = process.env.APIKey;
 let exercises = [];
 
 const getExercises = (req, res, next) => {
