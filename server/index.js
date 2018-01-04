@@ -6,6 +6,7 @@ const app = express();
 const ec = require("./controllers/exercises_controller");
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.static(`${__dirname}/../build/`));
 
 app.get("/api/exercises", ec.getExercises);
 app.post("/api/exercises", ec.addExercises);
