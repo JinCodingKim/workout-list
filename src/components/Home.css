@@ -3,51 +3,38 @@
   padding: 0;
 }
 
-.mainContainer {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+.main-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 80%;
+  height: 84%;
   width: 100%;
   min-width: 418px;
 }
 
-.bodyContainer {
+.body-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch;
-  align-content: center;
   height: 70%;
-  width: 70%;
+  width: 100%;
   margin-top: 5%;
 }
 
-.bodyInfo {
+.body-info {
   height: 300px;
   width: 300px;
 }
 
-.title {
-  font-size: 60px;
+.body-header {
+  color: rgb(235, 235, 235);
+  margin-top: 35px;
   text-align: center;
-  margin-bottom: 4vh;
-  letter-spacing: 5px;
-  color: #84caf9;
-  font-weight: bold;
 }
 
-.bodyHeader {
-  color: #84caf9;
-  text-transform: uppercase;
-}
-
-#bodyParagraph {
+#body-paragraph {
   text-align: center;
   letter-spacing: 1px;
   margin: 20px 50px;
@@ -56,21 +43,53 @@
 }
 
 ul {
-  margin: 1.5em;
+  margin: 15px;
 }
 
 ul li {
-  border-bottom: 1px solid #ccc;
-
-  padding: 0.2em 0 0.2em 0.5em;
-  font-weight: bold;
-  color: #84caf9;
+  border-bottom: 3px solid rgb(235, 235, 235);
+  padding: 3px 0 3px 0;
+  color: rgb(235, 235, 235);
   list-style-type: none;
 }
 
-.imageContainer {
-  background-image: url("./main_image.png");
+.image-container {
+  background-image: url("./barbell_invert_image.png");
   height: 300px;
   width: 300px;
-  background-size: contain;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+  margin-left: 20px;
+  min-width: 300px;
+}
+
+@media (max-width: 440px) {
+  .main-container {
+    width: 100%;
+  }
+  .image-container {
+    height: 151px;
+    width: 100px;
+    min-width: 175px;
+  }
+  .body-info {
+    height: 250px;
+    width: 250px;
+  }
+  .body-header {
+    margin-top: 25px;
+    font-size: 15px;
+  }
+  #body-paragraph {
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin: 10px 40px;
+    font-size: 10px;
+    line-height: 20px;
+  }
+  ul li {
+    border-bottom: 1.5px solid rgb(235, 235, 235);
+    padding: 3px 0 3px 0;
+  }
 }

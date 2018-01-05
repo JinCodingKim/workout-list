@@ -76,20 +76,20 @@ class CreateWorkout extends Component {
 
   render() {
     return (
-      <div className="createContainer">
-        <h2 id="createTitle">
+      <div className="create-container">
+        <h2 id="create-title">
           How many days per week would you like to work out?:
         </h2>
-        <div className="buttonsContainer">
-          <button className="createButton" onClick={this.threeDays}>
+        <div className="buttons-container">
+          <button className="create-button" onClick={this.threeDays}>
             Three Days (Full Body Workouts)
           </button>
-          <button className="createButton" onClick={this.fourDays}>
+          <button className="create-button" onClick={this.fourDays}>
             Four Days (Upper/Lower Split Workouts)
           </button>
         </div>
 
-        <div className="programContainer">
+        <div className="program-container">
           {this.state.numberOfDays === 3 ? (
             <MWFList mwf={this.state.workouts1} days={this.state.days1} />
           ) : (

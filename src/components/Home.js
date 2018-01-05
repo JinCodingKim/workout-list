@@ -4,21 +4,20 @@ import "./Home.css";
 class Home extends Component {
   render() {
     return (
-      <section className="mainContainer">
-        <div className="bodyContainer">
-          <div className="bodyInfo">
-            <h1 className="title">Workout</h1>
-            <h4 className="bodyHeader">Reasons You Should Workout:</h4>
-            <p id="bodyParagraph">
+      <section className="main-container">
+        <div className="body-container">
+          <div className="image-container" />
+          <div className="body-info">
+            <h2 className="body-header">REASONS TO WORKOUT</h2>
+            <div id="body-paragraph">
               <ul>
-                <li>Mental Release</li>
-                <li>Confidence Boost</li>
-                <li>More Energy</li>
-                <li>Combat Depression</li>
+                <li>MENTAL RELEASE</li>
+                <li>CONFIDENCE BOOST</li>
+                <li>MORE ENERGY</li>
+                <li>COMBAT DEPRESSION</li>
               </ul>
-            </p>
+            </div>
           </div>
-          <div className="imageContainer" />
         </div>
       </section>
     );

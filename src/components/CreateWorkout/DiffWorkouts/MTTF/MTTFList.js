@@ -6,8 +6,8 @@ const MTTFList = props => {
     .map(exercise => {
       return (
         <div className="ex" key={exercise.id}>
-          <h2 className="exTitle"> {exercise.name}</h2>
-          <div className="exDescription">
+          <h2 className="ex-title"> {exercise.name}</h2>
+          <div className="ex-description">
             {" "}
             {exercise.description
               .replace(/(<p[^>]+?>|<p>|<\/p>)/gim, "")
@@ -50,8 +50,8 @@ const MTTFList = props => {
     .map(exercise => {
       return (
         <div className="ex" key={exercise.id}>
-          <h2 className="exTitle"> {exercise.name}</h2>
-          <div className="exDescription">
+          <h2 className="ex-title"> {exercise.name}</h2>
+          <div className="ex-description">
             {" "}
             {exercise.description
               .replace(/(<p[^>]+?>|<p>|<\/p>)/gim, "")
@@ -72,8 +72,8 @@ const MTTFList = props => {
     .map(exercise => {
       return (
         <div className="ex" key={exercise.id}>
-          <h2 className="exTitle"> {exercise.name}</h2>
-          <div className="exDescription">
+          <h2 className="ex-title"> {exercise.name}</h2>
+          <div className="ex-description">
             {" "}
             {exercise.description
               .replace(/(<p[^>]+?>|<p>|<\/p>)/gim, "")
@@ -94,8 +94,8 @@ const MTTFList = props => {
     .map(exercise => {
       return (
         <div className="ex" key={exercise.id}>
-          <h2 className="exTitle"> {exercise.name}</h2>
-          <div className="exDescription">
+          <h2 className="ex-title"> {exercise.name}</h2>
+          <div className="ex-description">
             {" "}
             {exercise.description
               .replace(/(<p[^>]+?>|<p>|<\/p>)/gim, "")
@@ -116,8 +116,8 @@ const MTTFList = props => {
     .map(exercise => {
       return (
         <div className="ex" key={exercise.id}>
-          <h2 className="exTitle"> {exercise.name}</h2>
-          <div className="exDescription">
+          <h2 className="ex-title"> {exercise.name}</h2>
+          <div className="ex-description">
             {" "}
             {exercise.description
               .replace(/(<p[^>]+?>|<p>|<\/p>)/gim, "")
@@ -138,8 +138,8 @@ const MTTFList = props => {
     .map(exercise => {
       return (
         <div className="ex" key={exercise.id}>
-          <h2 className="exTitle"> {exercise.name}</h2>
-          <div className="exDescription">
+          <h2 className="ex-title"> {exercise.name}</h2>
+          <div className="ex-description">
             {" "}
             {exercise.description
               .replace(/(<p[^>]+?>|<p>|<\/p>)/gim, "")

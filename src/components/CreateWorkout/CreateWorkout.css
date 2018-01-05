@@ -1,4 +1,4 @@
-.createContainer {
+.create-container {
   height: 70vh;
   width: 100%;
   margin-top: 5%;
@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-#createTitle {
+#create-title {
   width: 80%;
   font-weight: bold;
   font-size: 35px;
@@ -18,13 +18,13 @@
   list-style-type: none;
 }
 
-.buttonsContainer {
+.buttons-container {
   margin-top: 5vh;
   height: 60%;
   width: 80%;
 }
 
-.createButton {
+.create-button {
   text-align: center;
   width: 300px;
   height: 100px;
@@ -40,7 +40,7 @@
   margin: 0 2%;
 }
 
-.createButton:hover {
+.create-button:hover {
   cursor: pointer;
   color: #84caf9;
   border: 4px solid #84caf9;
@@ -50,7 +50,7 @@
   padding: 10px;
 }
 
-.programContainer {
+.program-container {
   width: 55%;
   overflow: scroll;
   border: 2px solid #ccc;
@@ -71,7 +71,7 @@
   text-transform: uppercase;
 }
 
-.exTitle {
+.ex-title {
   width: 33%;
   margin: 0px auto;
   padding-top: 15px;
@@ -81,7 +81,7 @@
   letter-spacing: 1px;
 }
 
-.exDescription {
+.ex-description {
   padding: 3px 150px 5px 150px;
   font-size: 12px;
   line-height: 20px;

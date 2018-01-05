@@ -113,6 +113,7 @@
   border-radius: 0px 0px 15px 15px;
   margin: -2px 7vw;
   background-color: transparent;
+  outline: none;
 }
 
 #postButton:hover {
@@ -132,6 +133,7 @@
   border-radius: 15px;
   margin-right: 10px;
   background-color: transparent;
+  outline: none;
 }
 
 #deleteButton:hover {
@@ -152,6 +154,7 @@
   border-radius: 15px;
   margin-bottom: 10px;
   background-color: transparent;
+  outline: none;
 }
 
 .editButton:hover {
@@ -169,4 +172,7 @@
   letter-spacing: 0.5px;
   color: #84caf9;
   line-height: 20px;
+}
+
+@media (min-width: 1180px) {
 }

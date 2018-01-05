@@ -1,35 +1,35 @@
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
-import logo from "./main_image.png";
+import logo from "./barbell_image.png";
 import "./Header.css";
 
 class Header extends Component {
   render() {
     return (
       <header>
-        <div className="logoNav">
-          <div className="headLogo">
+        <div className="logo-nav">
+          <div className="head-logo">
             <Link to="/">
               <img src={logo} alt="" />
             </Link>
           </div>
           <nav className="navigation">
-            <div className="headButton">
+            <div className="head-button">
               <NavLink
                 to="/exercises"
-                className="notActive"
+                className="not-active"
                 activeClassName="active"
               >
-                Workout List
+                WORKOUT LIST
               </NavLink>
             </div>
-            <div className="headButton">
+            <div className="head-button">
               <NavLink
                 to="/create"
-                className="notActive"
+                className="not-active"
                 activeClassName="active"
               >
-                Create Workout
+                CREATE WORKOUT
               </NavLink>
             </div>
           </nav>
