@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import UnfilteredList from "./UnfilteredList";
 import axios from "axios";
 import "./WorkoutList.css";
@@ -8,11 +8,13 @@ class List extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      bodyPart: "",
       isLoading: true,
       exercises: [],
       name: "",
       description: ""
     };
+    this.filterByExercise = this.filterByExercise.bind(this);
     this.destroy = this.destroy.bind(this);
     this.add = this.add.bind(this);
     this.nameUpdate = this.nameUpdate.bind(this);
@@ -24,7 +26,6 @@ class List extends Component {
     axios
       .get("/api/exercises")
       .then(response => {
-        console.log(response);
         this.setState({
           exercises: response.data,
           isLoading: false
@@ -32,26 +33,38 @@ class List extends Component {
       })
       .catch(console.log);
   }
-  destroy(id) {
-    console.log("asdf");
-    axios.delete(`/api/exercises/${id}`).then(response => {
-      console.log(response.data);
-      this.setState({
-        exercises: response.data
-      });
+
+  filterByExercise(e) {
+    this.setState({
+      bodyPart: e.target.value
     });
   }
+
+  destroy(id) {
+    axios
+      .delete(`/api/exercises/${id}`)
+      .then(response => {
+        this.setState({
+          exercises: response.data
+        });
+      })
+      .catch(console.log);
+  }
+
   add() {
     let ex = {
       name: this.state.name,
       description: this.state.description,
       license_author: "wger.de"
     };
-    axios.post("/api/exercises", ex).then(response => {
-      return this.setState({
-        exercises: response.data
-      });
-    });
+    axios
+      .post("/api/exercises", ex)
+      .then(response => {
+        this.setState({
+          exercises: response.data
+        });
+      })
+      .catch(console.log);
   }
 
   update(id, description) {
@@ -60,14 +73,18 @@ class List extends Component {
         isLoading: true
       },
       () =>
-        axios.put(`/api/exercises/${id}`, { description }).then(response => {
-          return this.setState({
-            exercises: response.data,
-            isLoading: false
-          });
-        })
+        axios
+          .put(`/api/exercises/${id}`, { description })
+          .then(response => {
+            this.setState({
+              exercises: response.data,
+              isLoading: false
+            });
+          })
+          .catch(console.log)
     );
   }
+
   nameUpdate(val) {
     this.setState({
       name: val
@@ -85,8 +102,8 @@ class List extends Component {
     const exerciseList = this.state.exercises
       .filter((e, i) => {
         return (
-          JSON.stringify(e.category) === this.props.bodyPart ||
-          this.props.bodyPart === ""
+          JSON.stringify(e.category) === this.state.bodyPart ||
+          this.state.bodyPart === ""
         );
       })
       .map((exercise, i) => {
@@ -101,23 +118,38 @@ class List extends Component {
         );
       });
     return (
-      <div className="bigContainer">
-        <div className="listContainer">{exerciseList}</div>
-        <div className="postContainer">
+      <div className="workout-container">
+        <div className="big-container">
+          <select
+            className="filter-container"
+            value={this.state.bodyPart}
+            onChange={this.filterByExercise}
+          >
+            <option value="">Filter By Body Part</option>
+            <option value="11">Chest</option>
+            <option value="12">Back</option>
+            <option value="13">Shoulders</option>
+            <option value="10">Abs</option>
+            <option value="14">Calves</option>
+            <option value="8">Arms</option>
+          </select>
+          <div className="list-container">{exerciseList}</div>
+        </div>
+        <div className="post-container">
           <input
-            id="postTitle"
+            id="post-title"
             onChange={e => this.nameUpdate(e.target.value)}
             type="text"
             placeholder="Title"
             value={this.state.name}
           />
           <textarea
-            id="textContainer"
+            id="text-container"
             onChange={e => this.descriptionUpdate(e.target.value)}
             placeholder="Description"
             value={this.state.description}
           />
-          <button id="postButton" onClick={this.add}>
+          <button id="post-button" onClick={this.add}>
             Post
           </button>
         </div>
@@ -125,8 +157,8 @@ class List extends Component {
     );
   }
 }
-List.propTypes = {
-  bodyPart: PropTypes.oneOf(["", "11", "12", "13", "10", "14", "8"]).isRequired
-};
+// List.propTypes = {
+//   bodyPart: PropTypes.oneOf(["", "11", "12", "13", "10", "14", "8"]).isRequired
+// };
 
 export default List;

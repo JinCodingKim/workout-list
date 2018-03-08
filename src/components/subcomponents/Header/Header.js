@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
-import logo from "./barbell_image.png";
+import logo from "./bfit-navbar.png";
 import "./Header.css";
 
 class Header extends Component {
@@ -15,20 +15,12 @@ class Header extends Component {
           </div>
           <nav className="navigation">
             <div className="head-button">
-              <NavLink
-                to="/exercises"
-                className="not-active"
-                activeClassName="active"
-              >
+              <NavLink to="/exercises" className="not-active">
                 WORKOUT LIST
               </NavLink>
             </div>
             <div className="head-button">
-              <NavLink
-                to="/create"
-                className="not-active"
-                activeClassName="active"
-              >
+              <NavLink to="/create" className="not-active">
                 CREATE WORKOUT
               </NavLink>
             </div>

@@ -34,10 +34,10 @@ class UnfilteredList extends Component {
   render() {
     return (
       <div className="exercise" key={this.props.exercise.id}>
-        <h2 id="exerciseTitle">{this.props.exercise.name}</h2>
+        <h2 id="exercise-title">{this.props.exercise.name}</h2>
 
         {!this.state.edit ? (
-          <p id="descriptionContainer">
+          <p id="description-container">
             {this.props.exercise.description
               .replace(/(<p[^>]+?>|<p>|<\/p>)/gim, "")
               .replace(/(<li[^>]+?>|<li>|<\/li>)/gim, "")
@@ -48,25 +48,25 @@ class UnfilteredList extends Component {
           </p>
         ) : (
           <textarea
-            id="editContainer"
+            id="edit-container"
             onChange={this.changeDes}
             value={this.state.description}
           />
         )}
         <button
-          id="deleteButton"
+          id="delete-button"
           onClick={() => this.props.destroy(this.props.index)}
         >
           Delete Exercise
         </button>
 
         {!this.state.edit && (
-          <button className="editButton" onClick={this.toggleEdit}>
+          <button className="edit-button" onClick={this.toggleEdit}>
             Edit{" "}
           </button>
         )}
         {this.state.edit && (
-          <button className="editButton" onClick={this.save}>
+          <button className="edit-button" onClick={this.save}>
             Save{" "}
           </button>
         )}

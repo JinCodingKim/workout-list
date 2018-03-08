@@ -1,47 +1,45 @@
-import React, { Component } from "react";
-import axios from "axios";
-import List from "./List";
-import "./WorkoutList.css";
+// import React, { Component } from "react";
+// import axios from "axios";
+// import List from "./List";
+// import "./WorkoutList.css";
 
-class WorkoutList extends Component {
-  constructor(props) {
-    super(props);
+// class WorkoutList extends Component {
+//   constructor(props) {
+//     super(props);
 
-    this.state = {
-      bodyPart: ""
-    };
+//     this.state = {
+//       bodyPart: ""
+//     };
 
-    this.filterByExercise = this.filterByExercise.bind(this);
-  }
+//     this.filterByExercise = this.filterByExercise.bind(this);
+//   }
 
-  filterByExercise(e) {
-    this.setState({
-      bodyPart: e.target.value
-    });
-  }
+//   filterByExercise(e) {
+//     this.setState({
+//       bodyPart: e.target.value
+//     });
+//   }
 
-  render() {
-    return (
-      <div>
-        <div className="workoutContainer">
-          <select
-            className="filterContainer"
-            value={this.state.bodyPart}
-            onChange={this.filterByExercise}
-          >
-            <option value="">Filter By Body Part</option>
-            <option value="11">Chest</option>
-            <option value="12">Back</option>
-            <option value="13">Shoulders</option>
-            <option value="10">Abs</option>
-            <option value="14">Calves</option>
-            <option value="8">Arms</option>
-          </select>
+//   render() {
+//     return (
+//       <div className="workoutContainer">
+//         <select
+//           className="filterContainer"
+//           value={this.state.bodyPart}
+//           onChange={this.filterByExercise}
+//         >
+//           <option value="">Filter By Body Part</option>
+//           <option value="11">Chest</option>
+//           <option value="12">Back</option>
+//           <option value="13">Shoulders</option>
+//           <option value="10">Abs</option>
+//           <option value="14">Calves</option>
+//           <option value="8">Arms</option>
+//         </select>
 
-          <List bodyPart={this.state.bodyPart} />
-        </div>
-      </div>
-    );
-  }
-}
-export default WorkoutList;
+//         <List bodyPart={this.state.bodyPart} />
+//       </div>
+//     );
+//   }
+// }
+// export default WorkoutList;
