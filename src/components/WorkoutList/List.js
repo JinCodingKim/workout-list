@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import PropTypes from "prop-types";
 import UnfilteredList from "./UnfilteredList";
 import axios from "axios";
 import "./WorkoutList.css";
@@ -129,9 +128,10 @@ class List extends Component {
             <option value="11">Chest</option>
             <option value="12">Back</option>
             <option value="13">Shoulders</option>
-            <option value="10">Abs</option>
-            <option value="14">Calves</option>
             <option value="8">Arms</option>
+            <option value="10">Abs</option>
+            <option value="9">Legs</option>
+            <option value="14">Calves</option>
           </select>
           <div className="list-container">{exerciseList}</div>
         </div>
@@ -157,8 +157,5 @@ class List extends Component {
     );
   }
 }
-// List.propTypes = {
-//   bodyPart: PropTypes.oneOf(["", "11", "12", "13", "10", "14", "8"]).isRequired
-// };
 
 export default List;

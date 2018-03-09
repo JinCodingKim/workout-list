@@ -24,7 +24,6 @@ class CreateWorkout extends Component {
     axios
       .get("/api/exercises")
       .then(response => {
-        console.log(response);
         this.setState({
           exercises: response.data
         });
@@ -35,10 +34,10 @@ class CreateWorkout extends Component {
   threeDays() {
     let mwfWorkouts = this.state.exercises.filter(
       exercise =>
-        exercise.category == "11" ||
-        exercise.category == "12" ||
-        exercise.category == "9" ||
-        exercise.category == "10"
+        exercise.category === 11 ||
+        exercise.category === 12 ||
+        exercise.category === 9 ||
+        exercise.category === 10
     );
     this.setState({
       workouts1: mwfWorkouts,
@@ -54,13 +53,13 @@ class CreateWorkout extends Component {
   fourDays() {
     let mttfWorkouts = this.state.exercises.filter(
       exercise =>
-        exercise.category == "11" ||
-        exercise.category == "12" ||
-        exercise.category == "13" ||
-        exercise.category == "8" ||
-        exercise.category == "10" ||
-        exercise.category == "9" ||
-        exercise.category == "14"
+        exercise.category === 11 ||
+        exercise.category === 12 ||
+        exercise.category === 13 ||
+        exercise.category === 8 ||
+        exercise.category === 10 ||
+        exercise.category === 9 ||
+        exercise.category === 14
     );
     this.setState({
       workouts2: mttfWorkouts,
