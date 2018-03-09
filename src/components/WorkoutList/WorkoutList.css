@@ -138,8 +138,8 @@
   outline: none;
 }
 
-#post-button:hover,
-#post-button:focus,
+.post-button:hover,
+.post-button:focus,
 #delete-button:hover,
 #delete-button:focus,
 .edit-button:hover,
@@ -147,6 +147,7 @@
   cursor: pointer;
   background-color: rgb(235, 235, 235);
   color: rgb(48, 45, 45);
+  outline: none;
 }
 
 .edit-button {
@@ -176,6 +177,7 @@
   color: rgb(235, 235, 235);
   background-color: transparent;
   line-height: 20px;
+  outline: none;
 }
 
 @media (max-width: 925px) {

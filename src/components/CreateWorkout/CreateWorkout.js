@@ -76,15 +76,17 @@ class CreateWorkout extends Component {
   render() {
     return (
       <div className="create-container">
-        <h2 id="create-title">
-          How many days per week would you like to work out?:
-        </h2>
+        <h2 id="create-title">CHOOSE A PLAN</h2>
         <div className="buttons-container">
           <button className="create-button" onClick={this.threeDays}>
-            Three Days (Full Body Workouts)
+            FULL BODY
+            <br />
+            <span>(3 DAYS)</span>
           </button>
           <button className="create-button" onClick={this.fourDays}>
-            Four Days (Upper/Lower Split Workouts)
+            UPPER / LOWER
+            <br />
+            <span>(4 DAYS)</span>
           </button>
         </div>
 
