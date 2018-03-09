@@ -149,7 +149,7 @@ class List extends Component {
             placeholder="Description"
             value={this.state.description}
           />
-          <button id="post-button" onClick={this.add}>
+          <button className="post-button" onClick={this.add}>
             Post
           </button>
         </div>

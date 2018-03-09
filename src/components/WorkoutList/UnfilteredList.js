@@ -57,7 +57,7 @@ class UnfilteredList extends Component {
           id="delete-button"
           onClick={() => this.props.destroy(this.props.index)}
         >
-          Delete Exercise
+          Remove
         </button>
 
         {!this.state.edit && (
