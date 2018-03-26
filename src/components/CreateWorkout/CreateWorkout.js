@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import MWFList from "./DiffWorkouts/MWF/MWFList";
 import MTTFList from "./DiffWorkouts/MTTF/MTTFList";
+import LoaderSVG from "../../three-dots.svg";
 import "./CreateWorkout.css";
 
 class CreateWorkout extends Component {
@@ -14,6 +15,7 @@ class CreateWorkout extends Component {
       days2: [],
       workouts1: [],
       workouts2: [],
+      isLoading: true,
       numberOfDays: 0
     };
     this.threeDays = this.threeDays.bind(this);
@@ -25,7 +27,8 @@ class CreateWorkout extends Component {
       .get("/api/exercises")
       .then(response => {
         this.setState({
-          exercises: response.data
+          exercises: response.data,
+          isLoading: false
         });
       })
       .catch(console.log);
@@ -74,6 +77,12 @@ class CreateWorkout extends Component {
   }
 
   render() {
+    if (this.state.isLoading)
+      return (
+        <div className="create-loader-container">
+          <img className="create-loader" src={LoaderSVG} />
+        </div>
+      );
     return (
       <div className="create-container">
         <h2 id="create-title">CHOOSE A PLAN</h2>
@@ -91,7 +100,11 @@ class CreateWorkout extends Component {
         </div>
 
         <div className="program-container">
-          {this.state.numberOfDays === 3 ? (
+          {this.state.isLoading ? (
+            <div className="create-loader-container">
+              <img className="create-loader" src={LoaderSVG} />
+            </div>
+          ) : !this.state.isLoading && this.state.numberOfDays === 3 ? (
             <MWFList mwf={this.state.workouts1} days={this.state.days1} />
           ) : (
             <MTTFList mttf={this.state.workouts2} days={this.state.days2} />
