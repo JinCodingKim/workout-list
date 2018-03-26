@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import UnfilteredList from "./UnfilteredList";
 import axios from "axios";
+import LoaderSVG from "../../three-dots.svg";
 import "./WorkoutList.css";
 
 class List extends Component {
@@ -97,7 +98,12 @@ class List extends Component {
   }
 
   render() {
-    if (this.state.isLoading) return <h1>Page Is Loading...</h1>;
+    if (this.state.isLoading)
+      return (
+        <div className="loader-container">
+          <img className="loader" src={LoaderSVG} />
+        </div>
+      );
     const exerciseList = this.state.exercises
       .filter((e, i) => {
         return (
