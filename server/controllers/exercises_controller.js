@@ -36,7 +36,6 @@ const addExercises = (req, res, next) => {
 };
 
 const updateExercises = (req, res, next) => {
-  console.log(req.body);
   const { id } = req.params;
   const index = exercises.findIndex(exercise => exercise.id == id);
 
@@ -48,8 +47,6 @@ const updateExercises = (req, res, next) => {
 
 const removeExercises = (req, res, next) => {
   const { id } = req.params;
-
-  console.log(exercises.splice(+id, 1));
   res.json(exercises);
 };
 
