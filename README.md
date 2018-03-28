@@ -6,7 +6,7 @@ The user is able to:
 * Create,read,update, and delete exercsises from the list.
 * View workout programs.
 
-## Create With:
+## Created With:
 
 * ReactJS
 * Wger.de API
