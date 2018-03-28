@@ -1,7 +1,9 @@
 {
-  "main.css": "static/css/main.974c57d3.css",
-  "main.css.map": "static/css/main.974c57d3.css.map",
-  "main.js": "static/js/main.7b185a3b.js",
-  "main.js.map": "static/js/main.7b185a3b.js.map",
-  "static\\media\\main_image.png": "static/media/main_image.4f040aa1.png"
+  "main.css": "static/css/main.ed77d828.css",
+  "main.css.map": "static/css/main.ed77d828.css.map",
+  "main.js": "static/js/main.1bd636b6.js",
+  "main.js.map": "static/js/main.1bd636b6.js.map",
+  "static\\media\\bfit-home.png": "static/media/bfit-home.20d840ee.png",
+  "static\\media\\bfit-navbar.png": "static/media/bfit-navbar.4458f715.png",
+  "static\\media\\three-dots.svg": "static/media/three-dots.7627bc82.svg"
 }
